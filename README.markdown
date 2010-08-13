@@ -79,3 +79,6 @@ Recent Changes
 
 * Support for Jasmine 0.11.1
 * Stripped down to functional parts
+* added bin file for helper commands (following jasmine approach)
+* 'init' command that will insert a runner that uses jasmine.yml for files
+* 'run' command that is short hand for running the runner. Was planning to use a rake task but direct ruby call to the runner is so much faster.
