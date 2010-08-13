@@ -70,3 +70,12 @@ level fixtures dir if you like.
 
 There is no support for loading CSS rules from an external file, but early indications are that env.js has some support
 for CSS. Stay tuned.
+
+
+Recent Changes
+--------------
+
+### 2010-08-13
+
+* Support for Jasmine 0.11.1
+* Stripped down to functional parts

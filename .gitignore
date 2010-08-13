@@ -1,2 +1,4 @@
 .idea
 jazz_money*.gem
+.DS_Store
+**/*/.DS_Store

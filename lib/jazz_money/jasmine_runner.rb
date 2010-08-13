@@ -62,7 +62,7 @@ module JazzMoney
 
     def load_jasmine
       dir = File.join(JAZZ_MONEY_DIR, "jasmine", "lib")
-      ['consolex.js', 'jasmine-0.10.0.js'].each do |file|
+      ['consolex.js', 'jasmine-0.11.1.js'].each do |file|
         @page.load(File.join(dir, file))
       end
     end
