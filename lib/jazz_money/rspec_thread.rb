@@ -3,7 +3,7 @@ module JazzMoney
 
     begin
       require 'spec'
-    rescue
+    rescue LoadError
       require 'rspec/core'
       require 'rspec/core/raketask'
     end
