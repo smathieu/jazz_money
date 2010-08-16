@@ -1,7 +1,12 @@
 module JazzMoney
   class RspecThread
 
-    require 'rspec/core'
+    begin
+      require 'spec'
+    rescue LoadError
+      require 'rspec/core'
+      require 'rspec/core/rake_task'
+    end
 
     attr_reader :jasmine_reporter
 
