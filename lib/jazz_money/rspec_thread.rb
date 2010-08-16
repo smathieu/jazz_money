@@ -2,10 +2,10 @@ module JazzMoney
   class RspecThread
 
     begin
-      require 'spec'
-    rescue LoadError
       require 'rspec/core'
       require 'rspec/core/rake_task'
+    rescue LoadError  
+      require 'spec'
     end
 
     attr_reader :jasmine_reporter
@@ -25,7 +25,11 @@ module JazzMoney
 
     def run
       declare_suites
-      Spec::Runner.run rescue RSpec::Core::Runner.autorun
+      begin
+        RSpec::Core::Runner.autorun
+      rescue 
+        Spec::Runner.run
+      end
     end
 
     def declare_suites
