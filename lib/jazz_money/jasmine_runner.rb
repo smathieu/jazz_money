@@ -2,7 +2,7 @@ module JazzMoney
 
   class JasmineRunner
     
-    def initialize(page, jasmine_spec_files, js_includes, observer, html_fixture_dir = 'spec/javascript/fixtures')
+    def initialize(page, jasmine_spec_files, js_includes, observer, html_fixture_dir = 'spec/javascripts/fixtures')
       @page = page
       @observer = observer
       @js_includes = js_includes
@@ -32,6 +32,7 @@ module JazzMoney
       };
       JS
       @page.execute_js(js)
+      inject_pre_load_script
       load_js_includes
       load_jasmine_spec_files
       start_jasmine
@@ -58,6 +59,10 @@ module JazzMoney
           document.getElementsByTagName('body')[0].innerHTML = this.allFixtures[fixturePath];
         }
       JS
+    end
+    
+    def inject_pre_load_script
+      @page.execute_js(@pre_script) unless @pre_script.nil?
     end
 
     def load_jasmine

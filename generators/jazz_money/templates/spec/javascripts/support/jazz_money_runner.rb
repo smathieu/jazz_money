@@ -11,6 +11,8 @@ paths =   config["src_files"]
 helpers = config["helpers"]
 specs =   config["spec_files"]
 
+pre_script = config["pre_script"]
+
 javascript_files = []
 jasmine_spec_files = []
 
@@ -21,4 +23,4 @@ paths.each { |path| javascript_files.concat(Dir[File.join(RAILS_ROOT,path)]) } u
 helpers.each { |path| javascript_files.concat(Dir[File.join(JAVASCRIPT_SPEC,path)]) } unless helpers.nil?
 specs.each { |path| jasmine_spec_files.concat(Dir[File.join(JAVASCRIPT_SPEC,path)]) } unless specs.nil?
 
-JazzMoney::Runner.new(javascript_files, jasmine_spec_files).call
+JazzMoney::Runner.new(javascript_files, jasmine_spec_files, pre_script).call

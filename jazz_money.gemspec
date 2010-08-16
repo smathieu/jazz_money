@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.homepage            = "http://github.com/pivotalexperimental/jazz_money"
   s.rubyforge_project   = ""
   s.require_path        = "lib"
-  s.version             =  "0.0.4"
+  s.version             =  "0.0.5"
   s.executables         = ["jazz_money"]
   s.files               =  s.files = [
      "generators/jazz_money/jazz_money_generator.rb",

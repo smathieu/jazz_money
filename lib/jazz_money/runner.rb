@@ -2,10 +2,20 @@ module JazzMoney
 
   class Runner
 
-    def initialize(js_includes, jasmine_spec_files)
-      @page = Harmony::Page.new
+    def initialize(js_includes, jasmine_spec_files, fixtures_dir, pre_script=nil)
+      # create a full page structure with script tag to assist dojo with getting a root node.
+      @page = Harmony::Page.new(<<-HTML)
+        <html>
+          <head>
+            <script> var noop = {}; </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      HTML
       @jasmine_runner = JasmineRunner.new(@page, jasmine_spec_files, js_includes, self)
       @js_includes = js_includes
+      @pre_script  = pre_script
       @jasmine_spec_files = jasmine_spec_files
     end
 
