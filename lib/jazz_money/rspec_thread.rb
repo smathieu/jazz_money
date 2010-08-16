@@ -25,7 +25,7 @@ module JazzMoney
 
     def run
       declare_suites
-      RSpec::Core::Runner.autorun
+      Spec::Runner.run rescue RSpec::Core::Runner.autorun
     end
 
     def declare_suites
