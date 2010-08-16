@@ -28,4 +28,6 @@ Gem::Specification.new do |s|
   ]
 
   s.add_dependency 'harmony', '~>0.5.4'
+  s.add_dependency 'json',    '>= 1.4.3'
+  s.add_dependency 'jasmine', '>= 0.11.1.0'
 end
