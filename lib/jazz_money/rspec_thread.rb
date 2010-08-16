@@ -1,12 +1,8 @@
 module JazzMoney
   class RspecThread
 
-    begin
-      require 'spec'
-    rescue LoadError
-      require 'rspec/core'
-      require 'rspec/core/raketask'
-    end
+    require 'rspec/core'
+    require 'rspec/core/raketask'
 
     attr_reader :jasmine_reporter
 
