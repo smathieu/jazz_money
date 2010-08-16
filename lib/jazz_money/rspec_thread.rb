@@ -1,9 +1,6 @@
 module JazzMoney
   class RspecThread
 
-    require 'rspec/core'
-    require 'rspec/core/raketask'
-
     attr_reader :jasmine_reporter
 
     def self.start(suites, jasmine_reporter)
